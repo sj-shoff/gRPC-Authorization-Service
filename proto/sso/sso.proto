@@ -12,7 +12,6 @@ service Auth {
   rpc Login (LoginRequest) returns (LoginResponse);
   // IsAdmin checks whether a user is an admin.
   rpc IsAdmin (IsAdminRequest) returns (IsAdminResponse);
-  rpc Logout (LogoutRequest) returns (LogoutResponse);
 }
 
 message IsAdminRequest {
@@ -40,12 +39,4 @@ message LoginRequest {
 
 message LoginResponse {
   string token = 1; // Auth token of the logged in user.
-}
-
-message LogoutRequest {
-  string token = 1; // Auth token of the user to logout.
-}
-
-message LogoutResponse {
-  bool success = 1; // Indicates whether the logout was successful.
 }
